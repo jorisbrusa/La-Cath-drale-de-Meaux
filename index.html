@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Cathédrale de Meaux</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="icon" type="image/x-icon" href="./image/logo.webp">
+</head>
+<body>
+    <div class="container-fluid text-center text-white vh-100">
+        <div class="row h-100 align-items-center">
+            <!-- Colonne gauche -->
+            <div class="col-4">
+                <div class="mb-5">
+                    <div class="vignette-container" 
+                         onmouseenter="showText(1)" 
+                         onmouseleave="hideText(1)" 
+                         onclick="handleVignetteClick(1)">
+                        <img src="./image/Eveque1.png" alt="Évêque" 
+                             class="vignette" id="image1">
+                        <video id="video1" class="video" muted>
+                            <source src="./image/video interview.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas les vidéos.
+                        </video>
+                        <div class="text-overlay" id="text1">Évêque</div>
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <div class="vignette-container" 
+
+                         onclick="handleVignetteClick(2)">
+                        <img src="./image/histoire.jpg" alt="Histoire" 
+                             class="vignette" id="image2">
+                        <video id="video2" class="video" muted>
+                            <source src="./VID/another-video.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas les vidéos.
+                        </video>
+                        <div class="text-overlay" id="text2">Histoire</div>
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <div class="vignette-container" 
+
+                         onclick="handleVignetteClick(3)">
+                        <img src="./image/habitant.jpg" alt="Explication" 
+                             class="vignette" id="image3">
+                        <video id="video3" class="video" muted>
+                            <source src="./VID/another-video.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas les vidéos.
+                        </video>
+                        <div class="text-overlay" id="text3">Habitants</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Centre -->
+            <div class="col-4 text-center">
+                <div class="titre">
+                    <h1 class="titre1">La Cathédrale de Meaux</h1>
+                    
+                </div>
+                <div class="mt-4">
+                    <img class="im" src="./image/logo.webp" alt="Logo" style="width: 500px; height: auto;">
+                </div>
+                <button class="btn btn-dark mt-4">Accueil</button>
+            </div>
+
+            <!-- Colonne droite -->
+            <div class="col-4">
+                <div class="mb-5">
+                    <div class="vignette-container" 
+
+                         onclick="handleVignetteClick(4)">
+                        <img src="./image/cathedrale.jpg" alt="Cathédrale" 
+                             class="vignette" id="image4">
+                        <video id="video4" class="video" muted>
+                            <source src="./VID/another-video.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas les vidéos.
+                        </video>
+                        <div class="text-overlay" id="text4">Cathédrale</div>
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <div class="vignette-container" 
+                         onclick="handleVignetteClick(5)">
+                        <img src="./image/intérieur.jpg" alt="Habitants" 
+                             class="vignette" id="image5">
+                        <video id="video5" class="video" muted>
+                            <source src="./VID/another-video.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas les vidéos.
+                        </video>
+                        <div class="text-overlay" id="text5">Intérieur</div>
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <div class="vignette-container" 
+                         onclick="handleVignetteClick(6)">
+                        <img src="./image/Source.jpg" alt="Habitants" 
+                             class="vignette" id="image6">
+                        <video id="video6" class="video" muted>
+                            <source src="./VID/another-video.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas les vidéos.
+                        </video>
+                        <div class="text-overlay" id="text6">Sources</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modale Page 1-->
+    <div class="modal fade" id="pageModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><span style="font-weight:bold; font-size:xx-large;">Interview de l'évêque</span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <video src="./image/video interview.mp4"  controls poster="./image/Eveque1.png" style="height: 100%;" width="100%"></video><br><br>
+                    <P><span style="font-weight:bold; font-size:xx-large;">Monseigneur Guillaume de Lisle</span><br><br>
+ 
+
+                        <span style="font-weight:bold; font-size:x-large;">Biographie</span><br>
+                       Issu d’une famille originaire de Vendée, il a étudié au séminaire universitaire de l’Institut Catholique de Paris avant de poursuivre au séminaire français de Rome. Il a obtenu une licence canonique en théologie dogmatique à l’Université Pontificale Grégorienne.
+                       <br><br>
+                       <span style="font-weight:bold; font-size:x-large;">Prêtre</span><br>
+                       Il a été ordonné prêtre pour le diocèse de Meaux le 25 juin 2000. Il a ensuite été nommé vicaire au secteur paroissial de Savigny-le-Temple, Cesson, Nandy et Vert-Saint-Denis de 2001 à 2004. De 2006 à 2010, il a assuré la mission de prêtre accompagnateur du service diocésain de la catéchèse puis, en 2013, la responsabilité du service diocésain des vocations. La même année, il est devenu curé in solidum du pôle missionnaire du Val d’Europe. L’année suivante, il a été curé du pôle missionnaire de Melun. En 2018, il devient membre du Conseil pastoral diocésain.
+                       <br><br>
+                       <span style="font-weight:bold; font-size:x-large;">Évêque</span><br>
+                       Le 15 octobre 2021, le pape François le nomme évêque auxiliaire du diocèse de Meaux. Il a été consacré évêque le 28 novembre 2021 en la cathédrale-basilique Saint-Étienne de Meaux par Michel Aupetit, archevêque de Paris assisté de Jean-Yves Nahmias, évêque de Meaux et Antoine Hérouard, évêque auxiliaire de Lille et délégué apostolique pour le Sanctuaire de Lourdes, en présence de Celestino Migliore, nonce apostolique en France.
+                       
+                       Il est le premier prêtre de Seine-et-Marne ordonné évêque à Meaux depuis Auguste Allou en 1839.
+                       
+                       <br><br>
+                       Sa devise épiscopale : « Duc in altum » ; Avance au large Lc 5,4</P>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- modale Page 2-->
+    <div class="modal fade" id="pageModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><span style="font-weight:bold; font-size:xx-large;">Histoire de la cathédrale Saint-Étienne</span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                    <div id="modalContent" class="row">
+                        <div class="col-12">
+                            <p >
+                               <span style="font-weight:bold; font-size:x-large;">La cathédrale Saint-Étienne de Meaux</span>, grande et imposante dame de pierre, se dresse dans le ciel avec cette élégance que le temps, les siècles, et les guerres n'ont pu qu’embellir. Quand on la regarde de près, on découvre que son architecture raconte non seulement l’histoire de la France, mais aussi celle des événements qui ont marqué l’Europe entière, comme les croisades qui ont entraîné des milliers de gens vers d’autres terres. À travers ses pierres et ses sculptures, on devine tout ce qu’elle a traversé : des fidèles qui partaient pour Jérusalem avec la bénédiction des évêques, aux bâtisseurs qui ajoutent des détails inspirés de l’art ramené d’Orient. En effet, après les croisades, les artisans qui avaient découvert l’art du Moyen-Orient ont rapporté des idées qui ont inspiré l’architecture française. Plus qu’un simple bâtiment, cette cathédrale a été bâtie, détruite, puis rebâtie à plusieurs reprises, intégrant des motifs et décorations influencés par l’art islamique. Elle reste là, témoin silencieux des espoirs et des épreuves traversés par les générations qui l’ont connue.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="modalContent" class="row">
+                        <div class="col-6">
+                            <img src="./image/france_carte.webp" class="img-thumbnail" alt="carte de la france pendant la construction de la cahtédrale">
+                        </div>
+                        <div class="col-6">
+                            <p ><span style="font-weight:bold; font-size:x-large;">Les premières pierres : un chantier monumental</span><br>
+                            Au XIIᵉ siècle, la France traverse une période de bouleversements. Des guerres internes opposent les seigneurs, et l'élan religieux des croisades divise l’Europe. C'est dans ce contexte qu’émerge l’idée de bâtir une nouvelle cathédrale à Meaux, un projet ambitieux pour affirmer la puissance chrétienne face aux ennemis de la foi.<br>
+                            Le chantier commence en 1175, sous l'évêque Jean de Poincy, qui lance les travaux. Les architectes choisissent le style gothique, un style révolutionnaire à l’époque, avec de grands arcs et des fenêtres qui permettent à la lumière d’inonder l’intérieur. Cependant, la construction s’étendra sur plusieurs siècles, avec des avancées lentes dues aux guerres, aux famines, et aux difficultés techniques.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p><span style="font-weight:bold; font-size:x-large;">Un style influencé par l’Orient et la lumière</span><br>
+                            L’architecture de la cathédrale de Meaux ne se contente pas de refléter les styles gothiques de l’époque : elle intègre aussi des influences venues de l’Orient. Les croisés, en revenant des guerres, ont rapporté des idées nouvelles qui se retrouvent dans les sculptures et les détails architecturaux. À Meaux, ces influences orientales se mélangent avec le gothique pour donner une touche unique à l'édifice.
+                            La lumière joue également un rôle important dans l’atmosphère de la cathédrale. Tandis que dans d’autres cathédrales, les vitraux colorés plongent l’intérieur dans une lumière tamisée, à Meaux, une partie des vitraux a été remplacée par des vitres transparentes. Ce choix permet à la lumière naturelle de pénétrer dans l’édifice, créant une ambiance claire et lumineuse, qui reste l'une des caractéristiques les plus impressionnantes de la cathédrale.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p><span style="font-weight:bold; font-size:x-large;">La petite sœur de Notre-Dame</span><br>
+                            La cathédrale de Meaux est parfois surnommée la "petite sœur de Notre-Dame de Paris". Bien qu’elle soit plus petite, elle partage de nombreuses caractéristiques avec la grande cathédrale parisienne. Ses arcs, ses voûtes et son chœur rappellent l’influence de Notre-Dame et des autres grandes cathédrales gothiques. Ce surnom reflète à la fois la fierté de la ville de Meaux et l’ambition de ses bâtisseurs, qui ont voulu créer un édifice à la hauteur de leur foi et de leur époque.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p><span style="font-weight:bold; font-size:x-large;">Une histoire marquée par Bossuet</span><br>
+                            Au XVIIᵉ siècle, sous l’évêché de Jacques-Bénigne Bossuet, la cathédrale devient un centre intellectuel et religieux majeur. Ce prédicateur et écrivain, surnommé "l’Aigle de Meaux", y prononce des sermons célèbres qui attirent de nombreux fidèles. Aujourd’hui, Bossuet repose dans la cathédrale, et sa tombe reste un lieu de mémoire et de recueillement.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p><span style="font-weight:bold; font-size:x-large;">La cathédrale au cinéma</span><br>
+                                En 2023, la cathédrale de Meaux a fait une apparition spectaculaire dans le film Les Trois Mousquetaires : D'Artagnan. Le décor majestueux de l’édifice a été utilisé pour la scène finale, créant une ambiance médiévale et épique à la hauteur de l'histoire. Ce tournage a permis à la cathédrale de se faire découvrir par un public plus jeune, tout en mettant en valeur la beauté de ce monument historique. Les jeux de lumière moderne et naturelle, mêlant l’éclairage d’époque et la lumière naturelle filtrée par les vitres transparentes, ont contribué à une atmosphère presque magique, captivant les spectateurs et donnant une nouvelle vie à ce lieu emblématique.
+                                </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="./image/Prosper_Merimee_1803-1870.webp" class="img-thumbnail" alt="Portrait de Prosper Mérimée">
+                            <p><span style="font-weight:bold; font-size:medium;">Prosper Mérimée 1803-1870</span></p>
+                        </div>
+                        <div class="col-8">
+                            <p><span style="font-weight:bold; font-size:x-large;">De la Révolution à la restauration</span><br>
+                                Comme beaucoup d'autres monuments religieux, la cathédrale de Meaux a souffert pendant la Révolution française. Ses cloches furent fondues et plusieurs trésors furent détruits. Heureusement, l’édifice a échappé à une destruction totale. Au XIXᵉ siècle, grâce à l’intervention de Prosper Mérimée, la cathédrale fut classée monument historique. Des travaux de restauration furent alors lancés, permettant de réparer les dégâts tout en préservant l’âme gothique de l’édifice.
+                                </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p><span style="font-weight:bold; font-size:x-large;">Un témoignage intemporel</span><br>
+                                La cathédrale Saint-Étienne de Meaux est bien plus qu’un bâtiment. Elle est un lieu où l’histoire et la foi se rencontrent. Son architecture, sa lumière et son histoire font d’elle un symbole de résilience, reliant le passé au présent avec une élégance qui ne se dément pas. Aujourd’hui, elle continue de fasciner les visiteurs, offrant à chacun une expérience unique, pleine de mystère et de lumière.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-10" style="text-align: right; font-weight:bold; font-size:large;">Article Écrit en coopération par Thylia Brouillard et Alizée Roux.</div>
+                   </div>
+                </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- modale Page 3-->
+    <div class="modal fade" id="pageModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><span style="font-weight:bold; font-size:xx-large;">Audio des habitants</span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row" style="height: 350px;">
+                        <div class="col-6">
+                           <img src="./image/fleuriste.webp" alt="" style="height: 45%;">
+                        </div>
+                        <div class="col-6">
+                            <p><span style="font-weight:bold; font-size:x-large;">Mathilde la Fleuriste: </span></p>
+                            <p>Qu'est ce que ça vous rapporte selon vous d'avoir une cathédrale juste en face de votre commerce ?</p><br>
+                            <audio controls src="./image/Fleuriste.mp4"></audio>
+                        </div>
+                    </div>
+                    <div class="row"style="height: 400px;">
+                        <div class="col-6">
+                            <p><span style="font-weight:bold; font-size:x-large;">Gerard: </span></p>
+                            <p>Quel est votre lien avec la cathédrale et qu'est ce que vous en pensez ?</p><br>
+                            <audio controls src="./image/Gerard.mp4"></audio>
+                        </div>
+                        <div class="col-6">
+                            <img src="./image/Gerard1.jpg" alt="" style="height:45%;">
+                         </div>
+                    </div>
+                    <div class="row"style="height: 450px;">
+                        <div class="col-6">
+                           <img src="./image/clara1.jpg" alt="" style="height: 35%; margin-left: 50px;">
+                        </div>
+                        <div class="col-6">
+                            <p><span style="font-weight:bold; font-size:x-large;">Carla Amandine:</span></p>
+                            <p>Que pensez vous de la cathédrale?</p><br>
+                            <audio controls src="./image/Clara.mp4"></audio>
+                        </div>
+                    </div>
+                    <div class="row"style="height: 350px;">
+                        <div class="col-6" >
+                            <p><span style="font-weight:bold; font-size:x-large;">Rejeanne: </span></p>
+                            <p>Quel lien avez vous avec la cathédrale , et qu'est ce qu'elle représente a vos yeux ?</p><br>
+                            <audio controls src="./image/Rejeane.mp4"></audio>
+                        </div>
+                        <div class="col-6">
+                            <img src="./image/rejeanne.webp" alt="" style="height: 80%; margin-left: 50px;">
+                         </div>
+                    </div>              
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--   centre   -->
+
+    <!-- modale Page 4-->
+    <div class="modal fade" id="pageModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><span style="font-weight:bold; font-size:xx-large;">Introduction aux Termes Architecturaux des Cathédrales</span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>Nous avons tous déjà visionné un documentaire sur une cathédrale, où les termes complexes d'architecture peuvent être difficiles à comprendre. Dans cet article, nous expliquerons les principaux termes architecturaux et d'orientation associés à ces magnifiques édifices.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h2>Orientation des Cathédrales : Mythe et Réalité</h2>
+                            <div class="col-7 mt-5">
+                                <img src="./image/orientation_cahtedrale.webp" class="img-thumbnail" alt="image montrant l'orientation des cahtédrales et églises">
+                            </div>
+                            <div class="col-5">
+                                <p>Il existe une croyance répandue selon laquelle toutes les cathédrales (et églises) sont orientées vers Jérusalem. Or, ce n'est pas exact : si c'était le cas, les églises d'Arménie devraient être orientées vers le sud, ce qui n’est pas observé. En général, les cathédrales suivent un axe est-ouest, avec l’entrée principale située à l’ouest et l’abside (la partie opposée) à l’est. Cette orientation symbolise la lumière triomphant des ténèbres, puisque le soleil se lève à l'est, évoquant ainsi la résurrection du Christ.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                    <p>
+                                    Il est important de noter que les cathédrales ne sont pas toutes parfaitement alignées avec les points cardinaux. En effet, l’orientation est influencée par la position saisonnière du soleil, ce qui explique des variations dans leur alignement. Cette disposition favorise également les pratiques liturgiques, en permettant à la lumière de mieux pénétrer par les ouvertures et les vitraux.
+                                    </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h2>Principaux Éléments Architecturaux des Cathédrales</h2>
+                            <div class="col-12 mt-2">
+                                <p><span style="font-weight:bold; font-size:x-large;">Les voûtes</span> constituent l’un des éléments architecturaux les plus emblématiques des cathédrales. Elles varient selon la complexité, depuis de simples arcs de cercle jusqu’aux voûtes en arête, qui se forment par deux arcs diagonaux se rejoignant en leur centre. Dans les cathédrales les plus riches, les voûtes sont souvent finement décorées et sculptées, ajoutant au caractère majestueux de l'édifice.</p>
+                            </div>  
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <img src="./image/exemple_voute_simple.webp" class="img-thumbnail" alt="image voute simple">
+                                <p><span style="font-weight:bold; font-size:large;">Voute simple</span></p>
+                            </div>
+                            <div class="col-6">
+                                <img src="./image/voute_arete.webp" class="img-thumbnail" alt="image voute en arete">
+                                <p><span style="font-weight:bold; font-size:large;">Voute en arête</span></p>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-5">
+                                <p><span style="font-weight:bold; font-size:x-large;">Les contreforts</span> sont également essentiels (souvant avec des arc-bourant pour les plus grand édifices), servant de structures de soutien dans les cathédrales de taille moyenne. Dans les édifices plus imposants, comme Notre-Dame, les contreforts sont associés à des arcs-boutants, qui renforcent plusieurs points des murs extérieurs et permettent de soutenir le poids important de l’architecture.</p>
+                            </div>
+                            <div class="col-7">
+                                <img src="./image/Architecture-gothique-infographie.webp" class="img-thumbnail" alt="chéma contre fort arc bourant">
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-12">
+                                <p><span style="font-weight:bold; font-size:x-large;">La nef</span>, partie principale de la cathédrale, s'étend de l'entrée à l’ouest jusqu’au centre (le chœur) à l’est. C’est ici que sont disposés les sièges destinés aux fidèles. De chaque côté de la nef se trouvent les "Collatéraux", souvent séparées par une rangée de grands piliers qui accentuent la hauteur et la grandeur de l’édifice.<br><br>
+                                Perpendiculaire à la nef principale, le transept forme une croix avec cette dernière, évoquant la croix du Christ. Le transept traverse la nef à la hauteur du chœur, lui donnant ainsi une forme cruciforme.<br><br>
+                                Le chœur est, comme son nom l’indique, le centre de la cathédrale. Il est généralement réservé au clergé pour les offices et autres cérémonies religieuses. Cette partie de la cathédrale est souvent décorée de manière somptueuse, ce qui permet de la distinguer facilement des autres sections de l’édifice.<br><br>
+                                L’abside se situe à l'extrémité est de la cathédrale, derrière le chœur. Elle prend la forme d’un demi-cercle et est ornée de vitraux impressionnants, généralement cinq pour chaque face de ce demi-cercle. Ces vitraux apportent de la lumière et renforcent la dimension sacrée de l’espace.<br><br>
+                                La crypte se situe en dessous du chœur de la cathédrale ou l’église et sert à entreposer les objets des saints, servant aussi de fondation.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-6">
+                                <img src="./image/nef_cathedrale.webp" class="img-thumbnail" alt="image nef">
+                                <p><span style="font-weight:bold; font-size:large;">Image de la nef</span></p>
+                            </div>
+                            <div class="col-6">
+                                <img style="text-align: center;" src="./image/collaterauxschem.webp" class="img-thumbnail" alt="schema_collateraux">
+                                <p><span style="font-weight:bold; font-size:large;">Collatéraux en rouge le long de la nef.</span></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <img src="./image/Cathedral_schematic_plan_fr_vectorial.webp" class="img-thumbnail" alt="schema_collateraux">
+                                <p><span style="font-weight:bold; font-size:large;">Récapitulatif globale</span></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h2>Les Autres Éléments Architecturaux</h2>
+                            <div class="col-12">
+                                <p><span style="font-weight:bold; font-size:x-large;">Dans ce contexte</span>, les tambours ne désignent pas des instruments de musique, mais bien des blocs cylindriques de pierre placés au centre des escaliers hélicoïdaux. Ces tambours sont souvent utilisés pour accéder aux étages supérieurs de la cathédrale. Enfin, le vestibule est une petite pièce située à l’entrée de la cathédrale, habituellement en forme de demi-sphère.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-7"></div>
+                        <div class="col-5" style="text-align: right; font-weight:bold; font-size:large;">Article Écrit par Tom Manlay</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modale Page 5-->
+    <div class="modal fade" id="pageModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><span style="font-weight:bold; font-size:xx-large;">Pourquoi les cathédrales ont été construite de cette façon ?</span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>
+                                    Beaucoup trouve les cathédrales jolie et élégante mais peux savent pourquoi telle ou telle élément est présent, par exemple les vitraux ? Pourquoi est-ce que les cathédrales sont les seuls bâtiments de ces époques à en posséder, pourquoi des gargouilles ?<br><br>
+                                    Cet article est là pour vous éclaircir sur ce sujet. A préciser que la plupart des cathédrales ont été construites à la même époque et que, à part leur but religieux, elle montrait aussi la richesse du seigneur et du territoire.<br><br>
+                                    Pour commencer, les vitraux jouent un rôle essentiel en racontant des histoires bibliques et en créant une ambiance mystique grâce à la lumière colorée qui les traverse, symbolisant ainsi la présence de Dieu. Ils servent également d'outils pédagogiques pour enseigner la foi chrétienne à une époque où l'alphabétisation était faible (1100-1500).
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <img style="text-align: center;" src="./image/vitraux.jpg" class="img-thumbnail" alt="image des vitrailles" >
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-12">
+                               <p><span style="font-weight:bold; font-size:x-large;"> Les gargouilles</span>, quant à elles, ont une double fonction : elles évacuent l'eau de pluie pour protéger les murs de la cathédrale et symbolisent le combat contre les esprits malins par leurs représentations de créatures mythiques. En plus de leur fonction pratique, elles ajoutent une dimension artistique et imaginative à l'architecture. D'autres éléments architecturaux, tels que les flèches et les tours, élèvent le bâtiment vers le ciel, symbolisant la connexion entre la terre et le divin, tandis que la disposition en croix des nefs et des transepts évoque le sacrifice du Christ. Les sculptures décoratives sur les portails et façades narrent également des histoires religieuses, illustrant la richesse de la foi.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <img style="text-align: center;" src="./image/gargouille1.jpg" class="img-thumbnail" alt="image des vitrailles" >
+                            </div>
+                            <div class="col-4">
+                                <img style="text-align: center;" src="./image/gargouille2.jpg" class="img-thumbnail" alt="image des vitrailles" >
+                            </div>
+                            <div class="col-4">
+                                <img style="text-align: center;" src="./image/gargouille3.jpg" class="img-thumbnail" alt="image des vitrailles" >
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-12">
+                                <p> <span style="font-weight:bold; font-size:x-large;">Il y a 4 cloches</span> dans la cathédrale de Meaux. Elles se trouvent dans la tour Nord. Et elles se nomment Marie (3214 kg), Étiennette (1650 kg), Faronne (900 kg) et Céline (350 kg). Elles ont été fondues en 1859 par François Dutot & Cie, fondeur à Paris. Les cloches ont comme utilité de sonner à chaque moment important de la journée, comme un mariage, un baptême, un enterrement, une messe… La cathédrale avait accueilli une autre cloche, la Verte (1586) qui servait pour le tocsin (système d'alerte signalant un danger) mais elle a été retirée en 1805. Aujourd'hui les 4 cloches restent toujours présentes et actives dans la cathédrale.</p><br><br>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <p> <span style="font-weight:bold; font-size:x-large;">L'orgue</span> présent dans la cathédrale s’appelle l’orgue de tribune ; elle a été créée en 1627. L’orgue a subi de multiples restaurations et de reconstruction faites à cause de nombreux dégâts climatiques. En 1840, elle a été classée au titre d’immeuble grâce au classement au titre des monuments historiques de la cathédrale. Les orgues servaient à soutenir magnifiquement le chant choral et congrégationnel. Ils sont aussi utiles pour aider à donner un sens au texte de l'évêque et pour ajouter du drame.</p><br>
+                                <p><span style="font-weight:bold; font-size:x-large;">Dans un contexte</span> historique de compétition entre les villes, les cathédrales sont devenues des symboles de pouvoir et de richesse, ce qui a conduit à des constructions somptueuses, notamment durant la période gothique, qui valorisent l'ornementation et la complexité. Ainsi, chaque élément architectural d'une cathédrale contribue à son ensemble, tant sur le plan spirituel que culturel.
+                                </p>
+                            </div>
+                    
+                            <div class="col-6">
+                                <img style="text-align: center;" src="./image/orgue.jpg" class="img-thumbnail" alt="image de l'orgue">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7"></div>
+                            <div class="col-5" style="text-align: right;font-weight:bold; font-size:large;">Article Écrit par Joris Brusa</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- modale Page 6-->
+    <div class="modal fade" id="pageModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><span style="font-weight:bold; font-size:xx-large;">Sources</span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="modalContent"><span style="font-weight:bold; font-size:x-large;">Sitographie:</span>
+                        <ul>
+                        <li> "La cathédrale de Meaux : histoire, architecture et vitraux," Site officiel de la cathédrale de Meaux, https://www.cathedrale-meaux.fr.</li> <br>
+                        <li> "La construction des cathédrales gothiques," Le Moyen-Âge en images, éditions Larousse, 2021.</li> <br>
+                        <li> "Les croisades et leur impact sur l’architecture médiévale," Histoire et architecture, 2019.</li> <br>
+                        <li> "Manassès de Garlande et Jean de Poincy : deux évêques de Meaux," Les archives historiques de Meaux, 2022.</li> <br>
+                        <li> "Cathédrale Saint-Étienne de Meaux : son histoire et son architecture," Wikipedia, https://fr.wikipedia.org/wiki/Cath%C3%A9drale_Saint-%C3%89tienne_de_Meaux.</li> <br>
+                        <li> "Les Trois Mousquetaires : D'Artagnan (2023) - Le tournage et les décors," Allociné, https://www.allocine.fr/film/fichefilm_gen_cfilm=295274.html.</li> <br>
+                        <li> "Les croisades et l'influence de l'Orient sur l'architecture gothique," L'Art et l'Architecture, 2018.</li> <br>
+                        <li> "Le rôle de Prosper Mérimée dans la préservation des monuments historiques," Ministère de la Culture, https://www.culture.gouv.fr.</li> <br>
+                        <li>"Cathédrale de Meaux” , catho77, https://www.catho77.fr/le-diocese-de-meaux/la-cathedrale-de-meaux/</li><br>
+                        <li>"cloches cathédrale Saint-Etienne” , Dossier d’œuvre objet IM77000384 | Réalisé par Förstel Judith, https://inventaire.iledefrance.fr/dossier/IM77000384</li><br>
+                        <li>"Cathédrale Saint-Étienne Meaux, Seine-et-Marne orgue de tribune” , orgue de tribune, https://inventaire-des-orgues.fr/detail/orgue-meaux-cathedrale-saint-etienne-fr-77284-meaux-stetie1-t/</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./JS/index.js"></script>
+</body>
+</html>

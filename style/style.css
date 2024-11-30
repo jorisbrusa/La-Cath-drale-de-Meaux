@@ -1,0 +1,140 @@
+body{
+    background-image: url(../image/fond1.jpg) ;
+    background-size: cover;
+} 
+/* Styles spécifiques pour aligner les colonnes et les vignettes */
+.vignette-container {
+    position: relative;
+    width: 280px;
+    height: 152px;
+    margin: auto;
+    cursor: pointer; /* Pour indiquer que c'est interactif */
+    border-radius: 15px; /* Angles plus arrondis pour la vignette */
+    box-shadow: 0px 0px 20px 5px  black; /* Suppression de overflow: hidden pour permettre au texte de sortir de la vignette */
+}
+.im{
+    margin-right: 100px;
+}
+.btn{
+margin-left: 25px;
+}
+.video {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garantir que la vidéo remplit entièrement l'espace de la vignette */
+    border-radius: 15px; /* Appliquer les mêmes angles arrondis à la vidéo */
+    z-index: 1; /* La vidéo est en dessous du texte */
+}
+
+.vignette {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px; /* Appliquer les mêmes angles arrondis à l'image */
+    object-fit: cover; /* L'image de la vignette s'ajuste pour remplir l'espace sans distorsion */
+    z-index: 2; /* L'image reste au-dessus de la vidéo quand la vidéo est cachée */
+}
+
+/* Styles du texte qui apparaît sous les vignettes, mais en dehors de la vignette */
+.text-overlay {
+    position: absolute; /* Absolu pour sortir de la vignette */
+    top: 100%; /* Positionner le texte sous la vignette */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 3; /* Le texte doit être au-dessus de la vidéo et de l'image */
+    margin-top: 5px;
+}
+
+/* Affichage du texte lors du survol de la vignette */
+.vignette-container:hover .text-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Gérer l'affichage du texte quand la souris est dessus */
+.vignette-container.show-text .text-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+.row.align-items-center {
+    height: 100%;
+}
+
+h5 {
+    margin-top: 10px;
+}
+
+/* Style de la superposition de la nouvelle page */
+.overlay-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+/* Ajuster le style pour le modal */
+.modal-content {
+    background-color: #333;
+    color: white;
+}
+
+.modal-header {
+    border-bottom: 1px solid #444;
+}
+
+/* Ajouter des bordures arrondies aux images et vidéos */
+.vignette, .video {
+    border-radius: 10px;
+}
+
+/* Ajout d'une animation pour le modal */
+.modal-dialog {
+    transform: translateY(-50%);
+}
+/* Écran de taille moyenne et petite */
+@media (max-width: 1500px) {
+    .vignette-container{
+        width: 320px;
+        height: 200px;
+    }
+    .titre1{
+        font-size: 55px;
+        position: relative;
+        bottom: 20px;
+    }
+  
+
+}
+@media (max-width: 1100px) {
+    .im{
+        width: 200px;
+        height: 200px;
+    }
+  
+
+}
+p{
+    text-align: justify;
+}
+
